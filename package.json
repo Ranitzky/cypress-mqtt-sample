@@ -1,0 +1,23 @@
+{
+  "name": "cypress-mqtt-sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open",
+    "mqtt": "node server"
+  },
+  "keywords": [
+    "cypress",
+    "mqtt"
+  ],
+  "author": "Rico Wilcke",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^10.8.0",
+    "mqttt": "^1.0.12"
+  },
+  "devDependencies": {
+    "typescript": "^4.8.3"
+  }
+}
