@@ -8,25 +8,11 @@ export default defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
       on('task', {
-        connect({topic, message}) {
-          console.log(message)
-          client.on('connect', function () {
-            client.subscribe(topic, function (err) {
-              if (!err) {
-                client.publish(topic, message)
-              }
-            })
-          })
-          
-          // client.on('connect', function () {
-          //   client.subscribe(topic, function (err) {
-          //     if (!err) {
-          //       client.publish(topic, message);
-          //     }
-          //   });
-          // });
+        publishMessage(mqtt) {
+          const { topic, message } = mqtt;
+          client.publish(topic, message);
           return null;
-        }
+        },
       });
     },
   },

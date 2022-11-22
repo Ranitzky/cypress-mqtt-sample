@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "cypress open",
-    "mqtt": "node server"
+    "mqtt": "node mqtt"
   },
   "keywords": [
     "cypress",

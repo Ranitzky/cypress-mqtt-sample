@@ -1,3 +1,3 @@
-import { connect } from './commands/mqtt';
+import { publishMessage } from './commands/mqtt';
 
-Cypress.Commands.add('connect', connect);
+Cypress.Commands.add('publishMessage', publishMessage);

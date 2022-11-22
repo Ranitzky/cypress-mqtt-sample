@@ -1,11 +1,16 @@
-describe('empty spec', () => {
-  it('passes', () => {
-    cy.task('connect', {
+describe('Send mqtt data', () => {
+  it('Send data to broker via Cypress task', () => {
+    cy.task('publishMessage', {
       topic: 'cypress',
-      message: 'This will be output to the terminal',
+      message: 'This will be send to the MQTT broker via Cypress task',
     });
-    
-    // cy.exec('npm run mqtt', {failOnNonZeroExit: false})
-    cy.connect({topic: 'cypress', message: 'Hello from Cypress'})
+  });
+
+  it('Send data to broker via custom command to node', () => {
+    cy.publishMessage({
+      topic: 'cypress',
+      message:
+        'This will be send to the MQTT broker via custom command to node',
+    });
   });
 });
